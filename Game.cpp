@@ -51,7 +51,7 @@ bool Game::Initialize()
 		SDL_Log("Failed to create renderer: %s", SDL_GetError());
 		return false;
 	}
-	//
+	// Intialize objects
 	mPaddlePos.x = 10.0f;
 	mPaddlePos.y = 768.0f / 2.0f;
 
@@ -70,10 +70,6 @@ bool Game::Initialize()
 		balls.push_back(ball);
 	}
 	
-	//mBallPos.x = 1024.0f / 2.0f;
-	//mBallPos.y = 768.0f / 2.0f;
-	//mBallVel.x = -200.0f;
-	//mBallVel.y = 235.0f;
 	return true;
 }
 
@@ -168,7 +164,7 @@ void Game::UpdateGame()
 		}
 	}
 
-	// Update ball position based on ball velocity
+	// Update ball positions based on their velocity
 	
 	for (auto& ball : balls)
 	{
